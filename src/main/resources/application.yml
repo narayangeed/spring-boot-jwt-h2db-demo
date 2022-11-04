@@ -1,0 +1,52 @@
+server:
+   port: 8080
+   servlet:
+      context-path: /
+    
+logging:
+   file:
+      name: app.log
+   level:
+      org:
+         hibernate:
+            type: trace
+            stat: debug
+
+spring:
+   application:
+      name: spring-boot-jwt-h2db-demo    
+   
+#Hibernet and H2 db configurations
+   datasource:
+      url: jdbc:h2:file:./h2_db_file
+      driverClassName: org.h2.Driver
+      username: sa
+      password:
+   jpa:
+      database-platform: org.hibernate.dialect.H2Dialect 
+      #create database schema from SQL files
+      hibernate.ddl-auto: update
+      #Turn Statistics on and log SQL stmts
+      show-sql: true
+      properties:
+         hibernate:
+            format_sql: true
+            generate_statistics: false
+    #Enabling H2 Console
+   h2:
+      console:
+         enabled: true 
+          #Custom H2 Console URL
+         path: /h2-console
+ 
+
+ 
+
+
+
+
+      
+
+
+
+
